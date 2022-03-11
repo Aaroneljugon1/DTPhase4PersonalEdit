@@ -26,7 +26,7 @@ nVal7 = 5
 camfix4 = 5
 game.Lighting.Blur.Size = 8
 
-function playSound(id,pitch,)
+function playSound(id,pitch)
     spawn(function()
 local player = game.Players.LocalPlayer
 local char = player.Character
