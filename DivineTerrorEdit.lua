@@ -15,6 +15,17 @@ end
 
 print("Bone Wings Loaded")
 
+local Sound = Instance.new("Sound")
+Sound.Parent = game.Players.LocalPlayer.Character.Head
+Sound.Volume = 4.5
+Sound.Playing = false
+Sound.Looped = false
+Sound.SoundId = "rbxassetid://5342465893"
+Sound.Name = "Voice"
+Sound.PlaybackSpeed = 1
+wait(0.5)
+game.Players.LocalPlayer.Character.Head.Voice:Destroy()
+
 wait()
 nVal1 = -0.002
 nVal2 = -0.002
@@ -71,18 +82,18 @@ music.Looped = true
 music:Play()
 wait(10.5)
 spawn(function()
-Chat("You feel scared.",Color3.fromRGB(255, 0, 0))
+Chat("You feel scared...",Color3.fromRGB(255, 0, 0))
 BlackFlash()
 end)
-wait(2.5)
+wait(2.6)
 spawn(function()
 BlackFlash()
-Chat("You feel eerie.",Color3.fromRGB(255, 0, 0))
+Chat("You feel eerie...",Color3.fromRGB(255, 0, 0))
 end)
 wait(3)
 spawn(function()
 BlackFlash()
-Chat("You think something is wrong.",Color3.fromRGB(255, 0, 0))
+Chat("You think something is wrong...",Color3.fromRGB(255, 0, 0))
 end)
 wait(2.7)
 spawn(function()
@@ -92,6 +103,11 @@ wait(2.5)
 music.Volume = 1
 spawn(function()
 Chat([[You can't move your body
+You can't move your body
+You can't move your body
+You can't move your body
+You can't move your body
+You can't move your body
 You can't move your body
 You can't move your body
 You can't move your body
@@ -128,14 +144,20 @@ wait(0.3)
 game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
 wait(0.3)
 game.Players.LocalPlayer.Character.Humanoid.HipHeight = 9
-wait(0.3)
+wait(0.2)
 game.Players.LocalPlayer.Character.Humanoid.HipHeight = 10
-wait(0.3)
+wait(0.2)
 game.Players.LocalPlayer.Character.Humanoid.HipHeight = 11
-wait(0.3)
+wait(0.2)
 game.Players.LocalPlayer.Character.Humanoid.HipHeight = 12
-wait(0.3)
+wait(0.2)
 game.Players.LocalPlayer.Character.Humanoid.HipHeight = 13
+wait(0.2)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 14
+wait(0.2)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 15
+wait(0.1)
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 16
 end)
 BlackFlash()
 wait(2)
@@ -148,7 +170,9 @@ wait(2)
 music.Volume = 1.45
 wait(2)
 music.Volume = 1.55
-wait(6)
+wait(2)
+music.Volume = 1.65
+wait(4)
 Chat("You feel divine terror.",Color3.fromRGB(255, 0, 0))
 music.Volume = 2
 end)
@@ -405,8 +429,8 @@ wait(3)
 
 spawn(function()
 char = game.Players.LocalPlayer.Character
-local radius = 4--- How big you want the circle to be
-speed = 4 -- speed
+local radius = 4.1--- How big you want the circle to be
+speed = 6 -- speed
 tim = 8 -- how long you want it to spin
 local circle = math.pi * 2
 parts = {}
@@ -436,8 +460,8 @@ wait(tim)
 stop = true
 wait()
 char = game.Players.LocalPlayer.Character
-local radius = 3--- How big you want the circle to be
-speed = 8 -- speed
+local radius = 2.5--- How big you want the circle to be
+speed = 10 -- speed
 tim = 20 -- how long you want it to spin
 local circle = math.pi * 2
 parts = {}
