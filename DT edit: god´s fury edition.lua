@@ -1691,7 +1691,7 @@ Chat("with the same goal in mind...",Color3.fromRGB(255, 0, 0))
 wait(3)
 Chat([[Destroying eachother, and everyone
 we cared about.]],Color3.fromRGB(255, 0, 0))
-wait(5)
+wait(4)
 Chat([[But who said you'd be allowed
 to finish this world off?]],Color3.fromRGB(255, 0, 0))
 wait(4)
