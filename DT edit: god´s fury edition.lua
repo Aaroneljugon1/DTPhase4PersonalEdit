@@ -4339,9 +4339,10 @@ end
 end)
 
 end
--- CREDITS
-    -- Aaroneljugon1#8327 - Reworked and fixed the script, I dunno who made the core...
-    -- V 6.2 Attempt to fix V and C keybinds.
+--CREDITS
+--Shifter - made the core and basically all the script.
+--Aaroneljugon1#8327 Fixed the script, and added some things.
+   -- V 6.2 Attempt to fix V and C keybinds.
 --Note: Divine terror script has been deleted, I can't do anything for it..
--- V 6.3 Attempting a different Divine Terror script, may be incompatible, but lets try
--- GOD'S FURY EDITION: KILL THEM ALL
+-- V 6.3 Imma try a different Divine Terror script, may be incompatible, but lets try
+-- GOD'S FURY EDITION: KILL THEM ALL. NO STAMINA WASTE
