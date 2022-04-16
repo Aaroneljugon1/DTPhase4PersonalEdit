@@ -4337,4 +4337,5 @@ end)
 
 end
 -- CREDITS
-    -- Aaroneljugon1#8327 - Is me, the cool guy
+    -- Shifter - The cool guy who created da script.
+    -- Aaroneljugon1#8327 - Edited/Fixed the script, basically 15% of it. Also added some text.
