@@ -4347,4 +4347,4 @@ end
     -- V 6.2 Attempt to fix V and C keybinds.
 --Note: Divine terror script has been deleted, I can't do anything for it..
 -- V 6.3 Attempting a different Divine Terror script, may be incompatible, but lets try
--- V 6.4 Fixed music!
+-- V 6.4 Fixed music! Added custom clothing (auto-equipped when executed)
