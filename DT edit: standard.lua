@@ -1,4 +1,15 @@
 -- Core
+game.Players.LocalPlayer.Character.Head.face.Texture = "http://www.roblox.com/asset/?id=8717617042"
+
+spawn(function()
+game.Players.LocalPlayer.Character['Pal Hair']:Destroy()
+end)
+spawn(function()
+game.Players.LocalPlayer.Character['BoySpaceHair']:Destroy()
+end)
+game.Players.LocalPlayer.Character.Shirt.ShirtTemplate = "http://www.roblox.com/asset/?id=7218455869"
+game.Players.LocalPlayer.Character.Pants.PantsTemplate = "http://www.roblox.com/asset/?id=7218463573"
+
 local player = game.Players.LocalPlayer
 local char = player.Character
 camfix = 0
@@ -46,7 +57,7 @@ local args = {
     [1] = {
         [1] = getrenv()._G.Pass,
         [2] = "TakeStamina",
-        [3] = 1150
+        [3] = 2300
     }
 }
 game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
@@ -58,7 +69,7 @@ game:GetService("UserInputService").InputBegan:Connect(function(key, gc)
     if key.KeyCode == Enum.KeyCode["KeypadEight"] then
 print("Phase Skip - 4")
 purpleChat = false
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Shitty-script-bro/SoulShitterMain/main/divine%20terror.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Aaroneljugon1/DTPhase4PersonalEdit/main/DivineTerrorEdit.lua"))()
 end
 end)
 
@@ -593,7 +604,7 @@ local player = game.Players.LocalPlayer
 local char = player.Character
 local sound = Instance.new('Sound',char.Head)
 local id = 6930257355
-sound.Volume = 4
+sound.Volume = 4.5
 sound.SoundId = 'rbxassetid://'..id
 sound:Play()
 end)
@@ -709,7 +720,7 @@ local player = game.Players.LocalPlayer
 local char = player.Character
 local sound = Instance.new('Sound',char.Head)
 local id = 6930257355
-sound.Volume = 4
+sound.Volume = 4.5
 sound.SoundId = 'rbxassetid://'..id
 sound:Play()
 end)
@@ -783,7 +794,7 @@ local player = game.Players.LocalPlayer
 local char = player.Character
 local sound = Instance.new('Sound',char.Head)
 local id = 6930257355
-sound.Volume = 4
+sound.Volume = 4-5
 sound.SoundId = 'rbxassetid://'..id
 sound:Play()
 end)
@@ -1185,7 +1196,7 @@ local player = game.Players.LocalPlayer
 local char = player.Character
 local sound = Instance.new('Sound',char.Head)
 local id = 2167611163
-sound.Volume = 4
+sound.Volume = 4.5
 sound.SoundId = 'rbxassetid://'..id
 sound:Play()
 end)
@@ -1268,7 +1279,7 @@ game:GetService("UserInputService").InputBegan:Connect(function(key, gc)
         local char = player.Character
         local sound = Instance.new('Sound',char.Head)
         local id = 5665639497
-        sound.Volume = 5
+        sound.Volume = 6
         sound.SoundId = 'rbxassetid://'..id
         sound:Play()
         wait()
@@ -1276,7 +1287,7 @@ game:GetService("UserInputService").InputBegan:Connect(function(key, gc)
         local char = player.Character
         local sound = Instance.new('Sound',char.Head)
         local id = 5665639750
-        sound.Volume = 4
+        sound.Volume = 5
         sound.SoundId = 'rbxassetid://'..id
         sound:Play()
         wait(0.1)
@@ -1342,7 +1353,7 @@ for _,v in pairs(game.workspace:GetChildren()) do
 if v:FindFirstChildOfClass('Humanoid') then
 if v:FindFirstChild('Torso') then
 range = (char.PrimaryPart.Position - v.PrimaryPart.Position).Magnitude
-if range <20 and v.Name ~= player.Name then
+if range <25 and v.Name ~= player.Name then
 print("debug23837")
 spawn(function()
 local A_1 = getrenv()._G.Pass
@@ -1374,12 +1385,12 @@ v:Destroy()
 end
 local music = Instance.new("Sound",game.Players.LocalPlayer:WaitForChild("StarterPlaylist"))
 music.Volume = 1.7
-music.SoundId = "rbxassetid://3739485706"
+music.SoundId = "rbxassetid://9176726345"
 music.Looped = true
 music:Play()
 print("Music loaded!")
 -- UI/Visuals
-purpleChat = false
+purpleChat = true
 local Player = game.Players.LocalPlayer
 
 Player.Chatted:Connect(function(Chat)
@@ -1389,7 +1400,7 @@ local A_1 =  {
       [1] = getrenv()._G.Pass, 
       [2] = "Chatted", 
       [3] = (Chat), 
-      [4] = Color3.fromRGB(75, 0, 188)
+      [4] = Color3.fromRGB(255, 0, 0)
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.Events
 Event:FireServer(A_1)
@@ -1410,7 +1421,7 @@ spawn(function()
 player = game.Players.LocalPlayer
 
 player.PlayerGui:WaitForChild('GameOver')
-player.PlayerGui.GameOver.Sound.SoundId = 'rbxassetid://6485273824'--- changes game over music
+player.PlayerGui.GameOver.Sound.SoundId = 'rbxassetid://9625773785'--- changes game over music
 player.PlayerGui.GameOver.Frame.ImageLabel.TextLabel.Script:Destroy()--destroys original the local script you want to modify or change completely
 local function SCRIPT_JPEX75_FAKESCRIPT()--- making it into a function so that you can compile it into a local script
 script = Instance.new('LocalScript', player.PlayerGui.GameOver.Frame.ImageLabel.TextLabel)-- creates a new local script instance
@@ -1581,7 +1592,7 @@ local args = {
     [1] = {
         [1] = getrenv()._G.Pass,
         [2] = "TakeStamina",
-        [3] = 70 + (truelv * 6)
+        [3] = 65 + (truelv * 6)
     }
 }
 game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
@@ -1736,7 +1747,7 @@ Event:InvokeServer(A_1)
         local char = player.Character
         local sound = Instance.new('Sound',char.Head)
         local id = 623904185
-        sound.Volume = 3
+        sound.Volume = 3.5
         sound.SoundId = 'rbxassetid://'..id
         sound:Play()
 end)
@@ -1791,8 +1802,8 @@ for i,v in pairs(game.Players.LocalPlayer:WaitForChild("StarterPlaylist"):GetChi
 v:Destroy()
 end
 local music = Instance.new("Sound",game.Players.LocalPlayer:WaitForChild("StarterPlaylist"))
-music.Volume = 1.7
-music.SoundId = "rbxassetid://5351674153"
+music.Volume = 1.75
+music.SoundId = "rbxassetid://9176736620"
 music.Looped = true
 music:Play()
 
@@ -1957,7 +1968,7 @@ local args = {
     [1] = {
         [1] = getrenv()._G.Pass,
         [2] = "TakeStamina",
-        [3] = 60 + (truelv * 4)
+        [3] = 50 + (truelv * 4)
     }
 }
 game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
@@ -1976,7 +1987,7 @@ local args = {
     [1] = {
         [1] = getrenv()._G.Pass,
         [2] = "TakeStamina",
-        [3] = 200
+        [3] = 150
     }
 }
 game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
@@ -2487,7 +2498,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 1, 0),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 15
+        ["Damage"] = 5
     }
 }
 
@@ -2496,7 +2507,7 @@ local args = {
     [1] = {
         [1] = getrenv()._G.Pass,
         [2] = "TakeStamina",
-        [3] = 150
+        [3] = 125
     }
 }
 game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
@@ -2524,7 +2535,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 1, 0),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 15
+        ["Damage"] = 5
     }
 }
 
@@ -2554,7 +2565,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 1, 0),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 15
+        ["Damage"] = 5
     }
 }
 
@@ -2791,7 +2802,7 @@ Sound.PlaybackSpeed = 1
 wait(0.5)
 game.Players.LocalPlayer.Character.Head.Voice:Destroy()
 
-music.Volume = 0.5
+music.Volume = 0.45
 
 Chat([[[PAPYRUS]
 kid.]],Color3.fromRGB(255, 0, 0))
@@ -2913,7 +2924,6 @@ music:Stop()
 end)
 
 phase = 3
-RMB = false
 
 spawn(function()
 KnockbackAura()
@@ -2933,7 +2943,7 @@ local player = game.Players.LocalPlayer
     local char = player.Character
     local sound = Instance.new('Sound',char.Head)
     local id = 623904185
-    sound.Volume = 3.3
+    sound.Volume = 3.5
     sound.SoundId = 'rbxassetid://'..id
     sound:Play()
 end)
@@ -3048,7 +3058,7 @@ local player = game.Players.LocalPlayer
     local char = player.Character
     local sound = Instance.new('Sound',char.Head)
     local id = 539792706
-    sound.Volume = 1
+    sound.Volume = 1.1
     sound.SoundId = 'rbxassetid://'..id
     sound:Play()
 end)
@@ -3218,8 +3228,8 @@ for i,v in pairs(game.Players.LocalPlayer:WaitForChild("StarterPlaylist"):GetChi
 v:Destroy()
 end
 local music = Instance.new("Sound",game.Players.LocalPlayer:WaitForChild("StarterPlaylist"))
-music.Volume = 1.3
-music.SoundId = "rbxassetid://6460012412"
+music.Volume = 1.35
+music.SoundId = "rbxassetid://9176739051"
 music.Looped = false
 music:Play()
 
@@ -3246,8 +3256,8 @@ spawn(function()
 Vignette()
 end)
 wait(5)
-Chat([[Alphys' determination shines bright
-inside Sans' soul.]],Color3.fromRGB(255, 255, 255))
+Chat([[*Alphys' determination shines bright
+inside Sans' soul.*]],Color3.fromRGB(255, 255, 255))
 wait(1.5)
 spawn(function()
             for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
@@ -3321,15 +3331,15 @@ wait(1.5)
 spawn(function()
 created = false
 val = 1
-timeRemaining = 419
+timeRemaining = 650
 
 for i,v in pairs(game.Players.LocalPlayer:WaitForChild("StarterPlaylist"):GetChildren()) do
 v:Destroy()
 end
 local music = Instance.new("Sound",game.Players.LocalPlayer:WaitForChild("StarterPlaylist"))
-music.SoundId = "rbxassetid://6969433492"
+music.SoundId = "rbxassetid://9176752382"
 music.Looped = true
-music.Volume = 2
+music.Volume = 2.5
 music:Play()
 
 spawn(function()
@@ -3395,7 +3405,7 @@ local player = game.Players.LocalPlayer
     local char = player.Character
         local sound = Instance.new('Sound',char.Head)
         local id = 4615103543
-        sound.Volume = 4
+        sound.Volume = 10
         sound.Pitch = 0.9
         sound.TimePosition = 0.5
         sound.SoundId = 'rbxassetid://'..id
@@ -3533,12 +3543,12 @@ wait(7)
 Chat([[I'm surprised. Suprised someone so small 
 could hold such. great. power.]],Color3.fromRGB(255, 0, 0))
 wait(7)
-Chat("But that doesnt matter, not anymore.",Color3.fromRGB(255, 0, 0))
+Chat("But that doesnt matter, not anymore.",Color3.fromRGB(255, 255, 255))
 wait(5)
 Chat([[That little *power* of yours is going to become
 obsolete compared to mine.]],Color3.fromRGB(255, 0, 0))
 wait(6)
-Chat("But because i am so kind...",Color3.fromRGB(255, 0, 0))
+Chat("But because i am so kind...",Color3.fromRGB(255, 255, 255))
 wait(4)
 Chat("I'm going to share some of that power with you.",Color3.fromRGB(255, 0, 0))
 local Anim = Instance.new("Animation")
@@ -3585,7 +3595,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3594,7 +3604,7 @@ local args = {
     [1] = {
         [1] = getrenv()._G.Pass,
         [2] = "TakeStamina",
-        [3] = 300
+        [3] = 200
     }
 }
 game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
@@ -3624,7 +3634,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3655,7 +3665,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3686,7 +3696,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3717,7 +3727,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3748,7 +3758,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3779,7 +3789,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3810,7 +3820,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3841,7 +3851,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3872,7 +3882,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3903,7 +3913,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3934,7 +3944,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3965,7 +3975,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -3996,7 +4006,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -4027,7 +4037,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -4058,7 +4068,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -4089,7 +4099,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -4120,7 +4130,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -4151,7 +4161,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -4182,7 +4192,7 @@ local args = {
         ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Stunned,
         ["Velocity"] = Vector3.new(0, 0, 0.1),
         ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
-        ["Damage"] = 50
+        ["Damage"] = 30
     }
 }
 
@@ -4196,44 +4206,36 @@ end)
 wait(5)
 Chat("LADIES AND GENTLEMEN, WELCOME TO THE FINAL SHOWDOWN!!",Color3.fromRGB(255, 0, 0))
 wait(4)
-Chat("This wont take long...",Color3.fromRGB(255, 0, 0))
+Chat("This wont take long...",Color3.fromRGB(255, 255, 255))
 wait(5)
 Chat("...to swiftly perish you.",Color3.fromRGB(255, 0, 0))
-wait(5)
-Chat("Did I ever told you how much I like baseball?",Color3.fromRGB(255, 255, 255))
-wait(4)
+wait(6)
 Chat("3 STRIKES, YOU'RE OUT!",Color3.fromRGB(255, 0, 0))
 
-wait(10)
-Chat("You see, with your help I accomplished this form.",Color3.fromRGB(255, 0, 0))
-wait(9)
+wait(11)
+Chat("You see, with your help i accomplished this form.",Color3.fromRGB(255, 255, 255))
+wait(7)
 Chat("Now the only thing left from me is to get your soul.",Color3.fromRGB(255, 0, 0))
 wait(5)
 Chat("But you are making it much harder for me, yknow.",Color3.fromRGB(255, 0, 0))
-wait(5)
-Chat("But... Unfortunately for you...",Color3.fromRGB(255, 255, 255))
-wait(6)
-Chat([[i can feel the determination, the burning power in me, 
+wait(12)
+Chat([[I can feel the determination, the burning power in me, 
 it hurts but it feels amazing.]],Color3.fromRGB(255, 0, 0))
-wait(10)
+wait(6)
 Chat("And it's all thanks to you.",Color3.fromRGB(255, 0, 0))
 
 -- GH!DustTrust Dialogue 2
 
-wait(20)
-Chat("Hey...",Color3.fromRGB(255, 255, 255))
+wait(25)
+Chat("IS THAT ALL YOU GOT?",Color3.fromRGB(255, 255, 255))
 wait(3)
-Chat("IS THAT ALL YOU GOT?",Color3.fromRGB(255, 0, 0))
-wait(4)
 Chat("pathetic.",Color3.fromRGB(255, 0, 0))
 wait(3)
 Chat("let me teach you how to fight properly.",Color3.fromRGB(255, 0, 0))
-wait(5)
-Chat("First, stab me with that knive.- It's not that you will be able to...",Color3.fromRGB(255, 255, 255))
-wait(5)
-Chat("you're truly a heartless being, whos looking for attention.",Color3.fromRGB(255, 0, 0))
-wait(8)
-Chat("And never gets bored of doing the same thing.",Color3.fromRGB(255, 0, 0))
+wait(15)
+Chat("You're truly a heartless being, whos looking for attention.",Color3.fromRGB(255, 0, 0))
+wait(7)
+Chat("And never gets bored of doing the same thing.",Color3.fromRGB(255, 255, 255))
 wait(5)
 Chat("It's time to let you feel the pain of these poor remains.",Color3.fromRGB(255, 0, 0))
 
@@ -4241,11 +4243,11 @@ Chat("It's time to let you feel the pain of these poor remains.",Color3.fromRGB(
 -- Chat Colors: 255, 0, 0 - Red | 75, 0, 188) - Purple | 179, 255, 0) - Lime/Green or 89, 255, 0)
 
 wait(20)
-Chat("Sans, you cant take care of the human yourself.",Color3.fromRGB(255, 0, 0))
+Chat("Sans, you can't take care of the human yourself.",Color3.fromRGB(255, 0, 0))
 wait(7)
 Chat("Therefore, I am obligated to help you.",Color3.fromRGB(255, 0, 0))
 wait(4)
-Chat("good timing papyrus, im getting a bit tired of this.",Color3.fromRGB(255, 0, 0))
+Chat("Good timing papyrus, im getting a bit tired of this.",Color3.fromRGB(255, 255, 255))
 wait(7)
 Chat("Let me do this.",Color3.fromRGB(255, 0, 0))
 wait(15)
@@ -4282,9 +4284,13 @@ stun(false)
 
 -- GH!DustTrust Dialogue 4 | Papyrus's Turn 
 wait(6)
-Chat("Hey! Afterall, He's my only brother...",Color3.fromRGB(255, 0, 0))
+Chat("Hey! Afterall, Hes my only brother...",Color3.fromRGB(255, 0, 0))
 wait(6)
-Chat("And i have to protect him at any cost.",Color3.fromRGB(255, 0, 0))
+Chat("And i have to protect him at any cost...",Color3.fromRGB(255, 255, 255))
+wait(6.3)
+Chat("...from people like you.",Color3.fromRGB(255, 0, 0))
+wait(6.4)
+Chat("People that only wants power and LOVE.",Color3.fromRGB(255, 0, 0))
 
 -- GH!DustTrust Dialogue 5 | Ending Dialogue
 repeat wait() until timeRemaining == 19
@@ -4312,7 +4318,7 @@ end)
 music:Stop()
 wait(2)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Shitty-script-bro/SoulShitterMain/main/divine%20terror.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Aaroneljugon1/DTPhase4PersonalEdit/main/DivineTerrorEdit.lua"))()
 
 game:GetService("UserInputService").InputBegan:Connect(function(key, gc)
     if gc then return end
@@ -4337,5 +4343,8 @@ end)
 
 end
 -- CREDITS
-    -- Shifter - The cool guy who created da script.
-    -- Aaroneljugon1#8327 - Edited/Fixed the script, basically 15% of it. Also added some text.
+    -- Aaroneljugon1#8327 - Reworked and fixed the script, I dunno who made the core...
+    -- V 6.2 Attempt to fix V and C keybinds.
+--Note: Divine terror script has been deleted, I can't do anything for it..
+-- V 6.3 Attempting a different Divine Terror script, may be incompatible, but lets try
+-- V 6.4 Fixed music!
