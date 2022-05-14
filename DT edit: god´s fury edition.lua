@@ -5075,4 +5075,4 @@ end
 --Note: Divine terror script has been deleted, I can't do anything for it..
 -- V 6.3 Attempting a different Divine Terror script, may be incompatible, but lets try
 -- GOD'S FURY EDITION: KILL THEM ALL
--- V 6.4 FIXED MUSIC!
+-- V 6.4 FIXED MUSIC! Added custom clothing (auto-equipped when executed)
