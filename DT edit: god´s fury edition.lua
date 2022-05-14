@@ -1,3 +1,31 @@
+--Inf. Jump plugin
+
+
+_G.infinjump = not _G.infinjump
+
+if _G.infinJumpStarted == nil then
+	--Ensures this only runs once to save resources
+	_G.infinJumpStarted = true
+	
+	
+	--The actual infinite jump :flushed:
+	local plr = game:GetService('Players').LocalPlayer
+	local m = plr:GetMouse()
+	m.KeyDown:connect(function(k)
+		if _G.infinjump then
+			if k:byte() == 32 then
+			humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+			humanoid:ChangeState('Jumping')
+			wait()
+			humanoid:ChangeState('Seated')
+			end
+		end
+	end)
+end
+--ctrl+click tp
+local Plr = game:GetService("Players").LocalPlayer local Mouse = Plr:GetMouse()
+
+Mouse.Button1Down:connect( function() if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end if not Mouse.Target then return end Plr.Character:MoveTo(Mouse.Hit.p) end )
 -- Core
 game.Players.LocalPlayer.Character.Head.face.Texture = "http://www.roblox.com/asset/?id=8717617042"
 
@@ -1952,6 +1980,7 @@ glowt.LightInfluence = 0
 glowt.LightEmission = 1
 glowt.FaceCamera = false
 glowt.Color = ColorSequence.new(Color3.fromRGB(170, 0, 255))
+
 RMB = true
 stun(false)
 inv(false)
@@ -2090,10 +2119,6 @@ end)
 
 if phase == 2 then
 
-
-for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
-            v:Fire({"Model", "CrossLineBones", game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame * CFrame.new(math.random(1,2),math.random(1,2),math.random(1,2)) * CFrame.Angles(math.random(1,5),math.random(1,5),math.random(1,5))})
-            end
 local v1 = getrenv()._G.Pass
 local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
 local v3 = {
@@ -2211,7 +2236,7 @@ else print("late")
 end
 end)
 wait(2)
-blueattack = falseffff
+blueattack = false
 
 
 if phase == 2 then
@@ -5075,4 +5100,4 @@ end
 --Note: Divine terror script has been deleted, I can't do anything for it..
 -- V 6.3 Attempting a different Divine Terror script, may be incompatible, but lets try
 -- GOD'S FURY EDITION: KILL THEM ALL
--- V 6.4 FIXED MUSIC! Added custom clothing (auto-equipped when executed)
+-- V 6.4 added Ctrl+click tp and inf jump integrated with the script. Added custom clothing (auto-equipped when executed)
