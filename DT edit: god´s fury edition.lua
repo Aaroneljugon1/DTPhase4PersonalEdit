@@ -1,4 +1,15 @@
 -- Core
+game.Players.LocalPlayer.Character.Head.face.Texture = "http://www.roblox.com/asset/?id=8717617042"
+
+spawn(function()
+game.Players.LocalPlayer.Character['Pal Hair']:Destroy()
+end)
+spawn(function()
+game.Players.LocalPlayer.Character['BoySpaceHair']:Destroy()
+end)
+game.Players.LocalPlayer.Character.Shirt.ShirtTemplate = "http://www.roblox.com/asset/?id=7218455869"
+game.Players.LocalPlayer.Character.Pants.PantsTemplate = "http://www.roblox.com/asset/?id=7218463573"
+
 local player = game.Players.LocalPlayer
 local char = player.Character
 camfix = 0
@@ -46,7 +57,7 @@ local args = {
     [1] = {
         [1] = getrenv()._G.Pass,
         [2] = "TakeStamina",
-        [3] = 1150
+        [3] = 825
     }
 }
 game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
@@ -1374,12 +1385,12 @@ v:Destroy()
 end
 local music = Instance.new("Sound",game.Players.LocalPlayer:WaitForChild("StarterPlaylist"))
 music.Volume = 1.7
-music.SoundId = "rbxassetid://3739485706"
+music.SoundId = "rbxassetid://9176726345"
 music.Looped = true
 music:Play()
 print("Music loaded!")
 -- UI/Visuals
-purpleChat = true
+purpleChat = false
 local Player = game.Players.LocalPlayer
 
 Player.Chatted:Connect(function(Chat)
@@ -1410,7 +1421,7 @@ spawn(function()
 player = game.Players.LocalPlayer
 
 player.PlayerGui:WaitForChild('GameOver')
-player.PlayerGui.GameOver.Sound.SoundId = 'rbxassetid://6485273824'--- changes game over music
+player.PlayerGui.GameOver.Sound.SoundId = 'rbxassetid://9625773785'--- changes game over music
 player.PlayerGui.GameOver.Frame.ImageLabel.TextLabel.Script:Destroy()--destroys original the local script you want to modify or change completely
 local function SCRIPT_JPEX75_FAKESCRIPT()--- making it into a function so that you can compile it into a local script
 script = Instance.new('LocalScript', player.PlayerGui.GameOver.Frame.ImageLabel.TextLabel)-- creates a new local script instance
@@ -1691,7 +1702,7 @@ Chat("with the same goal in mind...",Color3.fromRGB(255, 0, 0))
 wait(3)
 Chat([[Destroying eachother, and everyone
 we cared about.]],Color3.fromRGB(255, 0, 0))
-wait(4)
+wait(5)
 Chat([[But who said you'd be allowed
 to finish this world off?]],Color3.fromRGB(255, 0, 0))
 wait(4)
@@ -1701,7 +1712,7 @@ Chat("i'll make sure I'M the ONLY one who finishes the-",Color3.fromRGB(255, 0, 
 wait(3)
 Chat("Wh... what...?",Color3.fromRGB(255, 255, 255))
 music.Volume = 0
-wait(4)
+wait(6)
 Chat("Oh...I thought you wouldn't come, G...",Color3.fromRGB(255, 255, 255))
 wait(6.5)
 Chat("Guess that... Now it will be a lot easier...",Color3.fromRGB(255, 255, 255))
@@ -1798,13 +1809,13 @@ end
 
 wait(2)
 Chat("!?",Color3.fromRGB(255, 0, 0))
-wait(3)
+wait(4)
 for i,v in pairs(game.Players.LocalPlayer:WaitForChild("StarterPlaylist"):GetChildren()) do
 v:Destroy()
 end
 local music = Instance.new("Sound",game.Players.LocalPlayer:WaitForChild("StarterPlaylist"))
 music.Volume = 1.75
-music.SoundId = "rbxassetid://5351674153"
+music.SoundId = "rbxassetid://9176736620"
 music.Looped = true
 music:Play()
 
@@ -1820,12 +1831,13 @@ end)
 wait(0.5)
 Chat([[you think you're strong enough
  to kill me in one blow?]],Color3.fromRGB(255, 0, 0))
-wait(5)
+wait(6.5)
 Chat("i'm not that weak.",Color3.fromRGB(255, 0, 0))
-wait(4)
+wait(5.5)
 Chat([[you'll have to do more than hit 
  me with that rusty knife.]],Color3.fromRGB(255, 0, 0))
-wait(2.5)
+wait(4)
+
 game.Players.LocalPlayer.Character.Head.HealthBar.Frame.Health.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
 phase2hurtAnim = false
 spawn(function()
@@ -1843,10 +1855,106 @@ wait(0.2)
         wait(0.6)
         createbone()
 end)
+local player = game.Players.LocalPlayer
+local char = player.Character
+for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren()) do
+if v.Name == 'GTFriskSword' then
+sword2 = v:Clone()
+sword2.Parent = char
+sword2.GTFriskSword:Destroy()
+sword2.Anchored = false
+weld = Instance.new('Weld',sword2)
+weld.Part0 = sword2
+weld.Part1 = char['Right Arm']
+sword2.Name = 'DusttrustSwordRight'
+sword2.Color = Color3.fromRGB(98, 37, 209)
+weld.C0 = CFrame.new(0.95,-1.7,-0)*CFrame.Angles(1.6,0,-1.6)
+sword2.Transparency = 0
+end
+end
+spawn(function()
+char = game.Players.LocalPlayer.Character
+eye = char:WaitForChild("BadTimeEye")
+clone = char.BadTimeEye.Part.Beam:Clone()
+clone.Parent = char.BadTimeEye.Part
+char.BadTimeEye.Part.Beam:Destroy()
+wait()
+spawn(function()
+    repeat wait()
+        spawn(function()
+            game.Players.LocalPlayer.Character.BadTimeEye.Part.Beam.Color = ColorSequence.new(Color3.fromRGB(170, 0, 255))
+        end)
+        spawn(function()
+        for _,v in pairs(char.BadTimeEye:GetDescendants()) do
+            if v.Name == 'ParticleEmitter' then
+            v.Color = ColorSequence.new(Color3.fromRGB(170, 0, 255))
+            end
+        end
+        end)
+    until phase3 == true
+end)
+end)
+for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren()) do
+if v.Name == 'GTFriskSword' then
+sword2 = v:Clone()
+sword2.Parent = char
+sword2.GTFriskSword:Destroy()
+sword2.Anchored = false
+weld = Instance.new('Weld',sword2)
+weld.Part0 = sword2
+weld.Part1 = char['Left Arm']
+sword2.Name = 'DusttrustSwordLeft'
+sword2.Color = Color3.fromRGB(98, 37, 209)
+weld.C0 = CFrame.new(0.95,-1.7,-0)*CFrame.Angles(1.6,0,-1.6)
+sword2.Transparency = 0
+end
+end
+char = game.Players.LocalPlayer.Character
+local point1 = Instance.new('Attachment',char['DusttrustSwordLeft'])
+point1.Name = 'Point1'
+point1.Position = Vector3.new(0, -5, 0)---set point 1 for attachment
+local point2 = Instance.new('Attachment',char['DusttrustSwordLeft'])
+point2.Name = 'Point2'
+point2.Position = Vector3.new(0, 4, 0)---set point 2 for attachment
+local glowt = Instance.new('Trail',char['DusttrustSwordLeft'])
+glowt.Name = 'Passive Trail'
+glowt.Lifetime = 0.3
+glowt.MinLength = 0
+glowt.MaxLength = 500
+glowt.WidthScale = NumberSequence.new(0.2)
+glowt.Transparency = NumberSequence.new(0.5)
+---------------------Basically decides how 'tall' your particles are
+glowt.Attachment0 = point1
+glowt.Attachment1 = point2
+-----------------------------------------
+glowt.LightInfluence = 0
+glowt.LightEmission = 1
+glowt.FaceCamera = false
+glowt.Color = ColorSequence.new(Color3.fromRGB(170, 0, 255))
+local point1 = Instance.new('Attachment',char['DusttrustSwordRight'])
+point1.Name = 'Point1'
+point1.Position = Vector3.new(0, -5, 0)---set point 1 for attachment
+local point2 = Instance.new('Attachment',char['DusttrustSwordRight'])
+point2.Name = 'Point2'
+point2.Position = Vector3.new(0, 4, 0)---set point 2 for attachment
+local glowt = Instance.new('Trail',char['DusttrustSwordRight'])
+glowt.Name = 'Passive Trail'
+glowt.Lifetime = 0.5
+glowt.MinLength = 0
+glowt.MaxLength = 550
+glowt.WidthScale = NumberSequence.new(0.2)
+glowt.Transparency = NumberSequence.new(0.5)
+---------------------Basically decides how 'tall' your particles are
+glowt.Attachment0 = point1
+glowt.Attachment1 = point2
+-----------------------------------------
+glowt.LightInfluence = 0
+glowt.LightEmission = 1
+glowt.FaceCamera = false
+glowt.Color = ColorSequence.new(Color3.fromRGB(170, 0, 255))
 RMB = true
 stun(false)
 inv(false)
-
 spawn(function()
 player = game.Players.LocalPlayer
 char = player.Character
@@ -1981,37 +2089,25 @@ end
 end)
 
 if phase == 2 then
-game:GetService("UserInputService").InputBegan:Connect(function(key, gc)
-    if gc then return end
-    if key.KeyCode == Enum.KeyCode["X"] then
-local args = {
-    [1] = {
-        [1] = getrenv()._G.Pass,
-        [2] = "TakeStamina",
-        [3] = 1
-    }
+
+
+for i,v in pairs(getconnections(game:GetService("ReplicatedStorage").Remotes.Effects.OnClientEvent)) do
+            v:Fire({"Model", "CrossLineBones", game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.HumanoidRootPart.CFrame * CFrame.new(math.random(1,2),math.random(1,2),math.random(1,2)) * CFrame.Angles(math.random(1,5),math.random(1,5),math.random(1,5))})
+            end
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "KnifeHitEffect", 
+    ["Velocity"] = Vector3.new(0,-1,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.ChaosSaberSlice,
+    ["Damage"] = 4
 }
-game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
-blueattack = true
-spawn(function()
-for _,v in pairs(game.ReplicatedStorage.Effects:GetDescendants()) do
-if v.Name == 'WarningSans' then
-spawn(function()
-local A_1 =  {
-      [1] = getrenv()._G.Pass, 
-      [2] = "PlaySound", 
-      [3] = v, 
-      [4] = char.Head
-}
-local Event = game:GetService("ReplicatedStorage").Remotes.Functions
-Event:InvokeServer(A_1)
-wait(3)
-v:Destroy()
-end)
 
 end
-end
-end)
 
 spawn(function()
 for _,v in pairs(game.ReplicatedStorage.Sounds:GetDescendants()) do
@@ -2115,12 +2211,7 @@ else print("late")
 end
 end)
 wait(2)
-blueattack = false
-
-end
-end)
-end
-
+blueattack = falseffff
 
 
 if phase == 2 then
@@ -2807,22 +2898,22 @@ music.Volume = 0.45
 
 Chat([[[PAPYRUS]
 kid.]],Color3.fromRGB(255, 0, 0))
-wait(2)
+wait(2.5)
 Chat([[[PAPYRUS]
 is this really how you want it to end?]],Color3.fromRGB(255, 0, 0))
-wait(4)
+wait(4.5)
 Chat([[[PAPYRUS]
 SANS.]],Color3.fromRGB(255, 0, 0))
-wait(3)
+wait(3.5)
 Chat([[[PAPYRUS]
 he may look like a cheerful and harmless fellow.]],Color3.fromRGB(255, 0, 0))
-wait(3.5)
+wait(4)
 Chat([[[PAPYRUS]
 but. he has something special...]],Color3.fromRGB(255, 0, 0))
 spawn(function()
     maxLV()
 end)
-wait(4.5)
+wait(5)
 
 Chat([[[PAPYRUS]
 YOU FORGOT ABOUT HIS 'SPECIAL ATTACK']],Color3.fromRGB(255, 0, 0))
@@ -2920,6 +3011,8 @@ end
 -- Phase 3
 repeat wait()
 until game.Players.LocalPlayer.Character.Data.Stamina.Value <= 300
+game.Players.LocalPlayer.Character.DusttrustSwordRight:Destroy() 
+game.Players.LocalPlayer.Character.DusttrustSwordLeft:Destroy()
 spawn(function()
 music:Stop()
 end)
@@ -2935,7 +3028,7 @@ stun(true)
 inv(true)
 
 Chat("!",Color3.fromRGB(255, 0, 0))
-wait(0.5)
+wait(1.5)
 local player = game.Players.LocalPlayer
 local char = player.Character
 camfix = 0
@@ -3230,7 +3323,7 @@ v:Destroy()
 end
 local music = Instance.new("Sound",game.Players.LocalPlayer:WaitForChild("StarterPlaylist"))
 music.Volume = 1.35
-music.SoundId = "rbxassetid://6460012412"
+music.SoundId = "rbxassetid://9176739051"
 music.Looped = false
 music:Play()
 
@@ -3259,7 +3352,7 @@ end)
 wait(5)
 Chat([[*Alphys' determination shines bright
 inside Sans' soul.*]],Color3.fromRGB(255, 255, 255))
-wait(1.5)
+wait(3)
 spawn(function()
             for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
 if v.Name == 'BodyAura' then
@@ -3338,7 +3431,7 @@ for i,v in pairs(game.Players.LocalPlayer:WaitForChild("StarterPlaylist"):GetChi
 v:Destroy()
 end
 local music = Instance.new("Sound",game.Players.LocalPlayer:WaitForChild("StarterPlaylist"))
-music.SoundId = "rbxassetid://6969433492"
+music.SoundId = "rbxassetid://9176752382"
 music.Looped = true
 music.Volume = 2.5
 music:Play()
@@ -3540,17 +3633,17 @@ end)
 
 Chat([[So... this is the power of *determination* 
 papyrus was talking about.]],Color3.fromRGB(255, 0, 0))
-wait(7)
+wait(8.5)
 Chat([[I'm surprised. Suprised someone so small 
 could hold such. great. power.]],Color3.fromRGB(255, 0, 0))
-wait(7)
+wait(8.5)
 Chat("But that doesnt matter, not anymore.",Color3.fromRGB(255, 255, 255))
-wait(5)
+wait(6.5)
 Chat([[That little *power* of yours is going to become
 obsolete compared to mine.]],Color3.fromRGB(255, 0, 0))
-wait(6)
+wait(7.5)
 Chat("But because i am so kind...",Color3.fromRGB(255, 255, 255))
-wait(4)
+wait(5.5)
 Chat("I'm going to share some of that power with you.",Color3.fromRGB(255, 0, 0))
 local Anim = Instance.new("Animation")
 Anim.AnimationId = "rbxassetid://3877055653"
@@ -3559,7 +3652,7 @@ k:Play()
 k:AdjustSpeed(0.7)
 HPregen()
 
-wait(4)
+wait(5.5)
 Chat("Ready? Dirty Murderer.",Color3.fromRGB(255,0,0))
 wait(1.5)
 game.Players.LocalPlayer.Character.Head.HealthBar.Frame.Health.Size =  UDim2.new(0.45, 1, 0.25, 0)
@@ -4204,40 +4297,42 @@ end
 end)
 
 -- Phase 3.5
-wait(5)
+wait(5.5)
 Chat("LADIES AND GENTLEMEN, WELCOME TO THE FINAL SHOWDOWN!!",Color3.fromRGB(255, 0, 0))
-wait(4)
+wait(5.5)
 Chat("This wont take long...",Color3.fromRGB(255, 255, 255))
-wait(5)
+wait(6.5)
 Chat("...to swiftly perish you.",Color3.fromRGB(255, 0, 0))
-wait(6)
+wait(7.5)
 Chat("3 STRIKES, YOU'RE OUT!",Color3.fromRGB(255, 0, 0))
 
-wait(11)
-Chat("You see, with your help i accomplished this form.",Color3.fromRGB(255, 255, 255))
-wait(7)
-Chat("Now the only thing left from me is to get your soul.",Color3.fromRGB(255, 0, 0))
-wait(5)
-Chat("But you are making it much harder for me, yknow.",Color3.fromRGB(255, 0, 0))
 wait(12)
+Chat("You see, with your help i accomplished this form.",Color3.fromRGB(255, 255, 255))
+wait(8.5)
+Chat("Now the only thing left from me is to get your soul.",Color3.fromRGB(255, 0, 0))
+wait(6.5)
+Chat("But you are making it much harder for me, yknow.",Color3.fromRGB(255, 0, 0))
+wait(13.5)
 Chat([[I can feel the determination, the burning power in me, 
 it hurts but it feels amazing.]],Color3.fromRGB(255, 0, 0))
-wait(6)
+wait(7.5)
 Chat("And it's all thanks to you.",Color3.fromRGB(255, 0, 0))
 
 -- GH!DustTrust Dialogue 2
 
-wait(25)
+wait(30)
 Chat("IS THAT ALL YOU GOT?",Color3.fromRGB(255, 255, 255))
-wait(3)
+wait(4.5)
 Chat("pathetic.",Color3.fromRGB(255, 0, 0))
-wait(3)
+wait(4.5)
 Chat("let me teach you how to fight properly.",Color3.fromRGB(255, 0, 0))
-wait(15)
+wait(17)
 Chat("You're truly a heartless being, whos looking for attention.",Color3.fromRGB(255, 0, 0))
-wait(7)
+wait(8.5)
 Chat("And never gets bored of doing the same thing.",Color3.fromRGB(255, 255, 255))
 wait(5)
+Chat("Killing, resetting, killing...A non-stop loop of pain.",Color3.fromRGB(255, 0, 0))
+wait(6.5)
 Chat("It's time to let you feel the pain of these poor remains.",Color3.fromRGB(255, 0, 0))
 
 -- GH!DustTrust Dialogue 3 | Papyrus's Turn & Sans Turn
@@ -4245,17 +4340,17 @@ Chat("It's time to let you feel the pain of these poor remains.",Color3.fromRGB(
 
 wait(20)
 Chat("Sans, you can't take care of the human yourself.",Color3.fromRGB(255, 0, 0))
-wait(7)
+wait(8.5)
 Chat("Therefore, I am obligated to help you.",Color3.fromRGB(255, 0, 0))
-wait(4)
+wait(5.5)
 Chat("Good timing papyrus, im getting a bit tired of this.",Color3.fromRGB(255, 255, 255))
-wait(7)
+wait(8.5)
 Chat("Let me do this.",Color3.fromRGB(255, 0, 0))
-wait(15)
+wait(17)
 Chat("my turn.",Color3.fromRGB(255, 0, 0))
-wait(10)
+wait(11.5)
 Chat("Let me try!",Color3.fromRGB(255, 0, 0))
-wait(10)
+wait(11.5)
 
 -- GH!DustTrust Transformation to Papyrus
 stun(true)
@@ -4273,7 +4368,7 @@ k:Play()
 k:AdjustSpeed(0.5)
 wait(1)
 Chat("NOT NOW SANS!",Color3.fromRGB(255, 0, 0))
-wait(3)
+wait(4)
 k:Stop()
 local Anim = Instance.new("Animation")
 Anim.AnimationId = "rbxassetid://4661950750"
@@ -4284,9 +4379,9 @@ wait(1)
 stun(false)
 
 -- GH!DustTrust Dialogue 4 | Papyrus's Turn 
-wait(6)
+wait(7.5)
 Chat("Hey! Afterall, He's my only brother...",Color3.fromRGB(255, 0, 0))
-wait(6)
+wait(7.5)
 Chat("And i have to protect him at any cost.",Color3.fromRGB(255, 0, 0))
 
 -- GH!DustTrust Dialogue 5 | Ending Dialogue
@@ -4317,32 +4412,667 @@ wait(2)
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Aaroneljugon1/DTPhase4PersonalEdit/main/DivineTerrorEdit.lua"))()
 
-game:GetService("UserInputService").InputBegan:Connect(function(key, gc)
-    if gc then return end
-    if key.KeyCode == Enum.KeyCode["N"] then
-local args = {
-    [1] = getrenv()._G.Pass,
-    [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
-    [3] = {
-        ["HitTime"] = 1,
-        ["Type"] = "Normal",
-        ["HitEffect"] = "HeavyHitEffect",
-        ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
-        ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * math.huge,
-        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Burst,
-        ["Damage"] = 15
-    }
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k) 
+    if k == "m" then
+local Anim = Instance.new("Animation")
+    Anim.AnimationId = "rbxassetid://4456901030"
+    local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+    k:Play()
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
 }
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(-30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(-30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(-30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(-30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,-30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(0,30,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(-30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(-30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(-30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(30,0,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
+local v1 = getrenv()._G.Pass
+local v2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+local v3 = {
+    ["HitTime"] = 0.1, 
+    ["Type"] = "Normal", 
+    ["HitEffect"] = "BoneHitEffect", 
+    ["Velocity"] = Vector3.new(90,90,0),
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+    ["VictimCFrame"] = CFrame.new(-175.879379, 4.92168856, -267.05835, 0.151388139, 0, -0.988474429, 0, 1, 0, 0.988474429, 0, 0.151388139), 
+    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.BoneHit, 
+    ["Damage"] = 10
+}
+local event = game:GetService("ReplicatedStorage").Remotes.Damage
+event:InvokeServer(v1, v2, v3)
 
 game:GetService("ReplicatedStorage").Remotes.Damage:InvokeServer(unpack(args))
 end
 end)
 
 end
---CREDITS
---Shifter - made the core and basically all the script.
---Aaroneljugon1#8327 Fixed the script, and added some things.
-   -- V 6.2 Attempt to fix V and C keybinds.
+-- CREDITS
+    -- Aaroneljugon1#8327 - Reworked and fixed the script, I dunno who made the core...
+    -- V 6.2 Attempt to fix V and C keybinds.
 --Note: Divine terror script has been deleted, I can't do anything for it..
--- V 6.3 Imma try a different Divine Terror script, may be incompatible, but lets try
--- GOD'S FURY EDITION: KILL THEM ALL. NO STAMINA WASTE
+-- V 6.3 Attempting a different Divine Terror script, may be incompatible, but lets try
+-- GOD'S FURY EDITION: KILL THEM ALL
+-- V 6.4 FIXED MUSIC!
